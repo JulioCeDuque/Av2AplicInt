@@ -15,8 +15,8 @@ if ($conn->connect_error) {
 // Verificar se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obter os valores do formulário
-    $kkswow = $_POST["kkswow"];
-    $serverwow = $_POST["serverwow"];
+    $kkspxg = $_POST["kkspxg"];
+    $serverpxg = $_POST["serverpxg"];
 
     // Verificar se o banco de dados e a tabela existem, criar se necessário
     $createDatabaseQuery = "CREATE DATABASE IF NOT EXISTS $dbname";
@@ -24,15 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $conn->select_db($dbname);
 
-    $createTableQuery = "CREATE TABLE IF NOT EXISTS vendaswow (
+    $createTableQuery = "CREATE TABLE IF NOT EXISTS vendaspxg (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        kkswow INT(6) NOT NULL,
-        serverwow VARCHAR(30) NOT NULL
+        kkspxg INT(6) NOT NULL,
+        serverpxg VARCHAR(30) NOT NULL
     )";
     $conn->query($createTableQuery);
 
     // Inserir dados na tabela
-    $insertQuery = "INSERT INTO vendaswow (kkswow, serverwow) VALUES ('$kkswow', '$serverwow')";
+    $insertQuery = "INSERT INTO vendaspxg (kkspxg, serverpxg) VALUES ('$kkspxg', '$serverpxg')";
     if ($conn->query($insertQuery) === TRUE) {
         echo "Dados inseridos com sucesso.";
     } else {

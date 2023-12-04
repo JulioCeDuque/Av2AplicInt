@@ -15,8 +15,8 @@ if ($conn->connect_error) {
 // Verificar se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obter os valores do formulário
-    $kkswow = $_POST["kksrag"];
-    $serverwow = $_POST["serverrag"];
+    $kksdofus = $_POST["kksdofus"];
+    $serverdofus = $_POST["serverdofus"];
 
     // Verificar se o banco de dados e a tabela existem, criar se necessário
     $createDatabaseQuery = "CREATE DATABASE IF NOT EXISTS $dbname";
@@ -24,15 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $conn->select_db($dbname);
 
-    $createTableQuery = "CREATE TABLE IF NOT EXISTS vendasrag (
+    $createTableQuery = "CREATE TABLE IF NOT EXISTS vendasdofus (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        kksrag INT(6) NOT NULL,
-        serverrag VARCHAR(30) NOT NULL
+        kksdofus INT(6) NOT NULL,
+        serverdofus VARCHAR(30) NOT NULL
     )";
     $conn->query($createTableQuery);
 
     // Inserir dados na tabela
-    $insertQuery = "INSERT INTO vendasrag (kksrag, serverrag) VALUES ('$kksrag', '$serverrag')";
+    $insertQuery = "INSERT INTO vendasdofus (kksdofus, serverdofus) VALUES ('$kksdofus', '$serverdofus')";
     if ($conn->query($insertQuery) === TRUE) {
         echo "Dados inseridos com sucesso.";
     } else {
