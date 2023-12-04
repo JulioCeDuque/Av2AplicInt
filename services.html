@@ -19,8 +19,8 @@
                     <input type="number" id="kksrag" name="kksrag" placeholder="KK's">
                     <select class="form-select" id="serverrag" name="serverrag">
                         <option selected>Server</option>
-                        <option value="Thor">Thor</option>
-                        <option value="Valhalla">Valhalla</option>
+                        <option value="Ragnarok Thor">Thor</option>
+                        <option value="Ragnarok Valhalla">Valhalla</option>
                     </select>
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Comprar</button>
                 </form>
@@ -36,11 +36,11 @@
                     <input type="number" name="kkspxg" id="kkspxg" placeholder="KK's">
                         <select class="form-select" name="serverpxg" id="serverpxg">
                             <option selected>Server</option>
-                            <option value="Gold">Gold</option>
-                            <option value="Cosmic">Cosmic</option>
-                            <option value="Aurora">Aurora</option>
-                            <option value="Emerald">Emerald</option>
-                            <option value="Platinum">Platinum</option>
+                            <option value="PxG Gold">Gold</option>
+                            <option value="PxG Cosmic">Cosmic</option>
+                            <option value="PxG Aurora">Aurora</option>
+                            <option value="PxG Emerald">Emerald</option>
+                            <option value="PxG Platinum">Platinum</option>
                         </select>
                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Comprar</button>
                 </form>
@@ -56,11 +56,11 @@
                     <input type="number" name="kkswow" id="kkswow" placeholder="KK's">
                     <select class="form-select" name="serverwow" id="serverwow">
                         <option selected>Server</option>
-                        <option value="Azralon">Azralon</option>
-                        <option value="Gallywix">Gallywix</option>
-                        <option value="Goldrinn">Goldrinn</option>
-                        <option value="Nemesis">Nemesis</option>
-                        <option value="Tol Barad">Tol Barad</option>
+                        <option value="WoW Azralon">Azralon</option>
+                        <option value="WoW Gallywix">Gallywix</option>
+                        <option value="WoW Goldrinn">Goldrinn</option>
+                        <option value="WoW Nemesis">Nemesis</option>
+                        <option value="WoW Tol Barad">Tol Barad</option>
                     </select>
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Comprar</button>
                 </form>
@@ -76,21 +76,37 @@
                     <input type="text" class="form-control" name="kksdofus" id="kksdofus" placeholder="KK's">
                     <select class="form-select" name="serverdofus" id="serverdofus">
                         <option selected>Server</option>
-                        <option value="Imagiro">Imagiro</option>
-                        <option value="Orukam">Orukam</option>
-                        <option value="Hell Mina">Hell Mina</option>
-                        <option value="Draconiros">Draconiros</option>
-                        <option value="Sombra">Sombra</option>
-                        <option value="Tylezia">Tylezia</option>
-                        <option value="Tal Kasha">Tal Kasha</option>
-                        <option value="Lernaya">Lernaya</option>
-                        <option value="Gusnoh">Gusnoh</option>
-                        <option value="Zerpan">Zerpan</option>
+                        <option value="Dofus Imagiro">Imagiro</option>
+                        <option value="Dofus Orukam">Orukam</option>
+                        <option value="Dofus Hell Mina">Hell Mina</option>
+                        <option value="Dofus Draconiros">Draconiros</option>
+                        <option value="Dofus Sombra">Sombra</option>
+                        <option value="Dofus Tylezia">Tylezia</option>
+                        <option value="Dofus Tal Kasha">Tal Kasha</option>
+                        <option value="Dofus Lernaya">Lernaya</option>
+                        <option value="Dofus Gusnoh">Gusnoh</option>
+                        <option value="Dofus Zerpan">Zerpan</option>
                     </select>
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Comprar</button>
                 </form>
             </div>
         </div>
     </div>
+    <div id="dados"></div>
+    <script>
+        function carregarDados() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("dados").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "php/buscar.php", true);
+            xhttp.send();
+        }
+        
+        // Chame a função para carregar os dados quando a página for carregada
+        window.onload = carregarDados;
+        </script>
 </body>
 </html>
