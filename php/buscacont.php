@@ -15,7 +15,7 @@ $result = $conn->query($selectQuery);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "ID: " . $row["id"]. " - Kks : " . $row["kks"]. " - Servidor : " . $row["server"]. "<br>";
+        echo "ID: " . $row["id"]. " - nome : " . $row["nome"]. " - email : " . $row["email"]. " - mensagem : " . $row["mensagem"]. "<br>";
     }
 } else {
     echo "Nenhum dado encontrado.";

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InGame Shop</title>
+  <link rel="stylesheet" href="css/contato.css">
+</head>
+<body>
+    <header>
+        <h1>InGame Shop</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="info.html">Info</a></li>
+            <li><a href="sera.html">Produtos</a></li>
+            <li><a href="news.html">Fique Ligado</a></li>
+            <li><a href="contact.html">Contato</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section id="contato">
+        <h2>Entre em Contato</h2>
+        <p>Estamos aqui para ajudar. Entre em contato conosco caso tenha alguma dúvida ou solicitação.</p>
+        <form action="#" method="post">
+          <input type="text" placeholder="Seu Nome">
+          <input type="email" placeholder="Seu Email">
+          <textarea placeholder="Sua Mensagem"></textarea>
+          <button type="submit" class="btn">Enviar</button>
+        </form>
+      </section>
+      <div id="contatoss"></div>
+      <script>
+          function carregarContatos() {
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                      document.getElementById("contatoss").innerHTML = this.responseText;
+                  }
+              };
+              xhttp.open("GET", "php/buscarcont.php", true);
+              xhttp.send();
+          }
+          
+          // Chame a função para carregar os dados quando a página for carregada
+          window.onload = carregarContatos;
+          </script>
+      <footer>
+        <p>&copy; InGames Shop</p>
+      </footer>
+    </body>
+    </html>

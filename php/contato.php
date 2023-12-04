@@ -12,8 +12,9 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $kks = $_POST["kks"];
-    $server = $_POST["server"];
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $mensagem = $_POST["mensagem"];
 
     $createDatabaseQuery = "CREATE DATABASE IF NOT EXISTS $dbname";
     $conn->query($createDatabaseQuery);
@@ -22,14 +23,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $createTableQuery = "CREATE TABLE IF NOT EXISTS vendasgeral (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        kks INT(6) NOT NULL,
-        server VARCHAR(30) NOT NULL
+        nome VARCHAR(56) NOT NULL,
+        email VARCHAR(56) NOT NULL,
+        mensagem VARCHAR(250) NOT NULL
     )";
     $conn->query($createTableQuery);
 
-    $insertQuery = "INSERT INTO vendasgeral (kks, server) VALUES ('$kks', '$server')";
+    $insertQuery = "INSERT INTO vendasgeral (nome, email, mensagem) VALUES ('$nome', '$email', '$mensagem')";
     if ($conn->query($insertQuery) === TRUE) {
-        header("Location: /Av2AplicInt/sera.html"); 
+        header("Location: /Av2AplicInt/contact.html"); 
     } else {
         echo "Erro ao inserir dados: " . $conn->error;
     }
