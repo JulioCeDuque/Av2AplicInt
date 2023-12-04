@@ -10,26 +10,24 @@
 </head>
 <body>
     <div class="container">
-        <!-- <h1>My First Bootstrap Page</h1> -->
         <img src="/img/ragnarok2.png" align="left">
         <div class="container2">
             <h1>Venda De KK's Ragnarok</h1>
             <h2></h2>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" id="kks" placeholder="KK's">
-                 <button onclick="enviarParaBanco()">Enviar para Banco de Dados</button>
-                <!-- <input type="text" class="form-control" placeholder="KK's">
-                <select class="form-select" id="inputGroupSelect01">
-                    <option selected>Server</option>
-                    <option value="1">Thor</option>
-                    <option value="2">Valhalla</option>
-                </select>
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Comprar</button> -->
+                <form action="/php/rag.php" method="post">
+                    <input type="number" class="form-control" placeholder="KK's">
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected>Server</option>
+                        <option value="Thor">Thor</option>
+                        <option value="Valhalla">Valhalla</option>
+                    </select>
+                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Comprar</button>
+                </form>
             </div>
         </div>
     </div>
     <div class="container">
-        <!-- <h1>My First Bootstrap Page</h1> -->
         <img src="/img/pxg.jpg" align="left">
         <div class="container2">
             <h1>Venda De KK's PXG</h1>
@@ -48,26 +46,26 @@
         </div>
     </div>
     <div class="container">
-        <!-- <h1>My First Bootstrap Page</h1> -->
         <img src="/img/wow.png" align="left">
         <div class="container2">
             <h1>Venda De KK's WoW</h1>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="KK's">
-                <select class="form-select" id="inputGroupSelect01">
-                    <option selected>Server</option>
-                    <option value="1">Azralon</option>
-                    <option value="2">Gallywix</option>
-                    <option value="3">Goldrinn</option>
-                    <option value="4">Nemesis</option>
-                    <option value="5">Tol Barad</option>
-                </select>
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Comprar</button>
+                <form action="/php/wow.php" method="post">
+                    <input type="text" class="form-control" id="kkswow" placeholder="KK's">
+                    <select class="form-select" id="serverwow">
+                        <option selected>Server</option>
+                        <option value="Azralon">Azralon</option>
+                        <option value="Gallywix">Gallywix</option>
+                        <option value="Goldrinn">Goldrinn</option>
+                        <option value="Nemesis">Nemesis</option>
+                        <option value="Tol Barad">Tol Barad</option>
+                    </select>
+                    <button class="btn btn-outline-secondary" type="submit">Comprar</button>
+                </form>
             </div>
         </div>
     </div>
     <div class="container">
-        <!-- <h1>My First Bootstrap Page</h1> -->
         <img src="/img/dofus.jpg" align="left">
         <div class="container2">
             <h1>Venda De KK's Dofus</h1>
